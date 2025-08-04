@@ -33,7 +33,7 @@ const menuGroups = [
     title: 'Calendars',
     items: [
       { name: 'Date Calculator', href: '/datecalculator', icon: '📅' },
-       { name: 'Date Insights', href: '/date-insights', icon: '📅' },
+      { name: 'Date Insights', href: '/date-insights', icon: '📅' },
       { name: 'Calendar', href: '/calendar', icon: '🗓️' },
       { name: 'Time in Words', href: '/timeinwords', icon: '🗣️' }
     ]
@@ -52,8 +52,15 @@ export default function RouterNavbar({ children }) {
       className="glass-navbar shadow-lg py-3 mx-3 my-2 rounded"
     >
       <Container fluid className="align-items-center justify-content-between">
-        <Navbar.Brand as={Link} to="/" className="nav-brand">
-          ⏳ Chronoverse
+        <Navbar.Brand as={Link} to="/" className="nav-brand d-flex align-items-center">
+          <img
+            src="/logo512.png"
+            alt="Chronoverse Logo"
+            width="32"
+            height="38"
+            className=""
+          />
+          Chronoverse
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
