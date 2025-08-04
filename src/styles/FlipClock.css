@@ -1,0 +1,46 @@
+.flip-clock-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.flip-unit {
+  text-align: center;
+}
+
+.flip-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 0.25rem;
+}
+
+.flip-card {
+  background-color: #1e293b;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  min-width: 80px;
+  transition: all 0.3s ease;
+}
+
+/* Light mode */
+.flip-clock-container.light .flip-card {
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+.flip-clock-container.light .flip-label {
+  color: #334155;
+}
+
+.ampm {
+  display: flex;
+  align-items: flex-end;
+  font-size: 1.25rem;
+  padding-left: 0.5rem;
+}

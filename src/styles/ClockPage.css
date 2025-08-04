@@ -1,0 +1,35 @@
+.clock-toggle-button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color, rgba(255,255,255,0.3));
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.clock-toggle-button:hover {
+  background-color: var(--button-hover);
+}
+
+.clock-toggle-button.active {
+  background-color: #4c8ef1;
+  color: var(--button-active-text);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.clock-container {
+  min-height: 200px; /* Optional: Fixed height container */
+}
+
+.glass-container {
+  background: var(--bg-color);
+  backdrop-filter: blur(var(--container-blur));
+  -webkit-backdrop-filter: blur(var(--container-blur));
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
