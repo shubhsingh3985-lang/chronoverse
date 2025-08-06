@@ -4,6 +4,12 @@ import moment from 'moment-timezone';
 import { Container, Card, Form, Row, Col } from 'react-bootstrap';
 import { ThemeContext } from '../ThemeContext';
 import { lightTheme, darkTheme } from '../themes';
+import { Helmet } from 'react-helmet';
+
+<Helmet>
+  <title>Time Zone Info – Chronoverse</title>
+  <meta name="description" content="View detailed information about time zones across the world. Includes UTC offsets, daylight saving, and current time." />
+</Helmet>
 
 const TimezoneInfoPage = () => {
   const { theme } = useContext(ThemeContext);

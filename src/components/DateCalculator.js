@@ -6,6 +6,12 @@ import moment from 'moment';
 import DateDifference from './dates-insights/DateDifference'
 import AddSubDays from './dates-insights/AddSubDays';
 import CompareDates from './dates-insights/CompareDates';
+import { Helmet } from 'react-helmet';
+
+<Helmet>
+  <title>Date Calculator – Chronoverse</title>
+  <meta name="description" content="Calculate date differences, add/subtract days, and get total days or years between dates with ease." />
+</Helmet>
 
 export default function DateCalculator() {
     const { theme } = useContext(ThemeContext);

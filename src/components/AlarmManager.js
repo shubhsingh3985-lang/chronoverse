@@ -4,6 +4,12 @@ import { Button, Form, Card, Container, ListGroup } from 'react-bootstrap';
 import { ThemeContext } from '../ThemeContext';
 import { lightTheme, darkTheme } from '../themes';
 import alarmSound from '../assets/alarm.mp3'; // Add your custom sound here
+import { Helmet } from 'react-helmet';
+
+<Helmet>
+    <title>Alarm Manager | Chronoverse</title>
+    <meta name="description" content="Set smart alarms with sound, repeat settings, and theme support. Never miss an important task again." />
+</Helmet>
 
 export default function AlarmManager() {
     const { theme } = useContext(ThemeContext);

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Container, Card, Form, Button, Row, Col, Accordion } from 'react-bootstrap';
 import { ThemeContext } from '../ThemeContext';
 import { lightTheme, darkTheme } from '../themes';
@@ -7,6 +7,12 @@ import ISOWeekNumber from './dates-insights/ISOWeekNumber'
 import LeapYearChecker from './dates-insights/LeapYearChecker';
 import WorkingDaysCalculator from './dates-insights/WorkingDaysCalculator';
 import ZodiacSignBirthstone from './dates-insights/ZodiacSignBirthstone';
+import { Helmet } from 'react-helmet';
+
+<Helmet>
+    <title>Date Insights – Chronoverse</title>
+    <meta name="description" content="Discover working days, day of the week, age calculator, zodiac signs, leap years, and more insights from any date." />
+</Helmet>
 
 export default function DateInsights() {
     const { theme } = useContext(ThemeContext);
@@ -27,13 +33,13 @@ export default function DateInsights() {
                 <Card.Title className="text-center mb-2">📅 Date Insights</Card.Title>
 
                 <Accordion defaultActiveKey="0" alwaysOpen>
-                    <ISOWeekNumber eventKey={"0"}/>
+                    <ISOWeekNumber eventKey={"0"} />
 
-                    <LeapYearChecker eventKey={"1"}/>
+                    <LeapYearChecker eventKey={"1"} />
 
-                    <WorkingDaysCalculator eventKey={"2"}/>
+                    <WorkingDaysCalculator eventKey={"2"} />
 
-                    <ZodiacSignBirthstone eventKey={"3"}/>
+                    <ZodiacSignBirthstone eventKey={"3"} />
 
                     {/* Future Section Placeholder */}
                     <Accordion.Item eventKey="4" className="mb-3">

@@ -4,6 +4,7 @@ import { Navbar, Nav, NavDropdown, Container, Button } from 'react-bootstrap';
 import { ThemeContext } from '../ThemeContext';
 import { lightTheme, darkTheme } from '../themes';
 import '../styles/RouterNavbar.css'
+import { Alert } from 'react-bootstrap'; // Make sure this is imported
 
 const menuGroups = [
   {
@@ -45,6 +46,7 @@ export default function RouterNavbar({ children }) {
   const themeStyles = theme === 'light' ? lightTheme : darkTheme;
 
   return (
+    <>
     <Navbar
       bg="transparent"
       variant={theme}
@@ -54,7 +56,7 @@ export default function RouterNavbar({ children }) {
       <Container fluid className="align-items-center justify-content-between">
         <Navbar.Brand as={Link} to="/" className="nav-brand d-flex align-items-center">
           <img
-            src="/logo512.png"
+            src="/favicon.png"
             alt="Chronoverse Logo"
             width="32"
             height="38"
@@ -95,6 +97,15 @@ export default function RouterNavbar({ children }) {
           {theme === 'light' ? '🌙 Dark Mode' : '🌞 Light Mode'}
         </Button>
       </Container>
+        
     </Navbar>
+    <div className="mx-3 mb-3">
+        <Alert variant="info" className="text-center m-0 py-2 small shadow-sm rounded">
+          🚧 <strong>Chronoverse is just getting started!</strong> Some features may not work perfectly yet.
+          We're actively improving things and adding new tools every week. 🙏 Thanks for your patience!
+         <br/> <a href="/about" ><b>About Chronoverse.</b></a>
+        </Alert>
+      </div>
+    </>
   );
 }

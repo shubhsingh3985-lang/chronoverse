@@ -2,6 +2,12 @@ import React, { useState, useRef, useContext, useEffect } from 'react';
 import { Button, Card, Container, Row, Col, Form } from 'react-bootstrap';
 import { ThemeContext } from '../ThemeContext';
 import { lightTheme, darkTheme } from '../themes';
+import { Helmet } from 'react-helmet';
+
+<Helmet>
+    <title>Countdown Timer – Chronoverse</title>
+    <meta name="description" content="Set custom countdown timers for tasks, workouts, or reminders. Minimal design, clear alerts, and theme support." />
+</Helmet>
 
 export default function CountdownTimerPage() {
     const { theme } = useContext(ThemeContext);

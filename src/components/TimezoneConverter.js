@@ -1,17 +1,23 @@
 // src/components/TimezoneConverter.js
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import moment from 'moment-timezone';
 import { ThemeContext } from '../ThemeContext';
 import { lightTheme, darkTheme } from '../themes';
 import { Container, Card, Form, Row, Col, Button } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
+
+<Helmet>
+  <title>Time Zone Converter | Chronoverse</title>
+  <meta name="description" content="Convert time between any two global locations instantly. Perfect for scheduling international meetings or events." />
+</Helmet>
 
 const TimezoneConverter = () => {
   const { theme } = useContext(ThemeContext);
   const themeStyles = theme === 'light' ? lightTheme : darkTheme;
 
-const [inputTime, setInputTime] = useState(
-  moment().format('YYYY-MM-DDTHH:mm')
-);
+  const [inputTime, setInputTime] = useState(
+    moment().format('YYYY-MM-DDTHH:mm')
+  );
   const [fromZone, setFromZone] = useState('UTC');
   const [toZone, setToZone] = useState('America/New_York');
   const [convertedTime, setConvertedTime] = useState('');
@@ -41,7 +47,7 @@ const [inputTime, setInputTime] = useState(
       >
         <Card.Body>
           <Card.Title className="text-center mb-4">🌐 Timezone Converter</Card.Title>
-          
+
           <Form.Group className="mb-3">
             <Form.Label>Input Time</Form.Label>
             <Form.Control

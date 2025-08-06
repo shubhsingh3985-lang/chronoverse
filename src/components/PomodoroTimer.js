@@ -11,6 +11,12 @@ import {
 import { ThemeContext } from '../ThemeContext';
 import { lightTheme, darkTheme } from '../themes';
 import alarmSound from '../assets/alarm.mp3';
+import { Helmet } from 'react-helmet';
+
+<Helmet>
+  <title>	Pomodoro Timer – Chronoverse</title>
+  <meta name="description" content="Boost focus with the Pomodoro Technique. Includes session tracking, break reminders, and auto-switching." />
+</Helmet>
 
 const DEFAULT_DURATIONS = {
   pomodoro: 25,

@@ -6,6 +6,11 @@ import moment from 'moment';
 import 'moment/locale/fr';
 import 'moment/locale/hi';
 import AnalogClock from '../components/clock/AnalogClock'
+import { Helmet } from 'react-helmet';
+
+<Helmet>
+    <title>Time in Words – Chronoverse</title>
+</Helmet>
 
 const numberWords = [
     "Twelve", "One", "Two", "Three", "Four", "Five", "Six",

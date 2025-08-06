@@ -19,11 +19,15 @@ import DateCalculator from './components/DateCalculator'
 import DateInsights from './components/DateInsights'
 import CalendarView from './components/CalendarView'
 import TimeInWords from './components/TimeInWords'
+import About from './components/About'
+import Feedback from './components/Feedback'
+import usePageAnalytics from './analytics/usePageAnalytics'
+
 
 export default function AppLayout() {
   const { theme } = useContext(ThemeContext);
   const themeStyles = theme === 'light' ? lightTheme : darkTheme;
-
+  usePageAnalytics();
   return (
     <div className="flex flex-col min-h-screen">
       <div
@@ -55,6 +59,8 @@ export default function AppLayout() {
             <Route path="/date-insights" element={<DateInsights />} />
             <Route path="/calendar" element={<CalendarView />} />
             <Route path="/timeinwords" element={<TimeInWords />} />
+             <Route path="/about" element={<About />} />
+             <Route path="/feedback" element={<Feedback />} />
           </Routes>
         </div>
         <Footer />

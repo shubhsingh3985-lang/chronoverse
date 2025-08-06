@@ -3,15 +3,19 @@ import React, { useState, useEffect, useContext } from 'react';
 import { ThemeContext } from '../../ThemeContext';
 import { lightTheme, darkTheme } from '../../themes';
 
-export default function AnalogClock({givenTime}) {
-  const [time, setTime] = useState(new Date(givenTime) ?? new Date());
+export default function AnalogClock({ givenTime }) {
+  const [time, setTime] = useState(givenTime ? new Date(givenTime) : new Date());
   const { theme } = useContext(ThemeContext);
   const themeStyles = theme === 'light' ? lightTheme : darkTheme;
 
   useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(timer);
-  }, []);
+    if (givenTime) {
+      setTime(new Date(givenTime));
+    } else {
+      const timer = setInterval(() => setTime(new Date()), 1000);
+      return () => clearInterval(timer);
+    }
+  }, [givenTime]);
 
   const radius = 80;
   const center = 100;

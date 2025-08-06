@@ -3,6 +3,12 @@ import moment from 'moment-timezone';
 import { Card, Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { ThemeContext } from '../ThemeContext';
 import { lightTheme, darkTheme } from '../themes';
+import { Helmet } from 'react-helmet';
+
+<Helmet>
+    <title>World Clocks | Chronoverse</title>
+    <meta name="description" content="Track current time in multiple cities around the world. Great for teams, travelers, or global business coordination." />
+</Helmet>
 
 const defaultCities = [
     { name: 'New York', zone: 'America/New_York' },
@@ -22,7 +28,6 @@ export default function WorldClocksPage() {
         defaultCities.unshift(userTimeZoneData);
     }
     const [cities, setCities] = useState(() => {
-        debugger
 
         const stored = localStorage.getItem('userTimezones');
         return stored ? JSON.parse(stored) : defaultCities;

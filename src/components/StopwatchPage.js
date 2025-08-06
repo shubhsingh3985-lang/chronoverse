@@ -1,8 +1,14 @@
 // src/components/StopwatchPage.js
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import { Button, Card, Container, Row, Col, ListGroup } from 'react-bootstrap';
 import { ThemeContext } from '../ThemeContext';
 import { lightTheme, darkTheme } from '../themes';
+import { Helmet } from 'react-helmet';
+
+<Helmet>
+  <title>Online Stopwatch – Chronoverse</title>
+  <meta name="description" content="Use our simple, precise, and distraction-free stopwatch to track time accurately. Start, stop, and reset instantly." />
+</Helmet>
 
 export default function StopwatchPage() {
   const { theme } = useContext(ThemeContext);
@@ -67,7 +73,7 @@ export default function StopwatchPage() {
         <Card.Body>
           <Card.Title className="text-center">⏱️ Stopwatch</Card.Title>
 
-          <h1 className="display-4 text-center my-4" style={{fontWeight:'400'}}>{formatTime(time)}</h1>
+          <h1 className="display-4 text-center my-4" style={{ fontWeight: '400' }}>{formatTime(time)}</h1>
 
           <Row className="text-center mb-3">
             <Col>

@@ -3,6 +3,12 @@ import { Container, Card, Button, Modal, Form } from 'react-bootstrap';
 import { ThemeContext } from '../ThemeContext';
 import { lightTheme, darkTheme } from '../themes';
 import ph from '../assets/Ph_data.json'
+import { Helmet } from 'react-helmet';
+
+<Helmet>
+    <title>Interactive Calendar – Chronoverse</title>
+    <meta name="description" content="Explore an interactive calendar with selectable dates, productivity views, and theme support." />
+</Helmet>
 
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
@@ -92,7 +98,7 @@ export default function CalendarView() {
     const isWeekend = (date) => date && (date.getDay() === 0 || date.getDay() === 6);
 
     const isHoliday = (date) => {
-        debugger
+        
         if (!date) return false;
         const iso = getLocalDateISO(date);
         var isHolidayTrue = holidays.find(x => x.date == iso);
